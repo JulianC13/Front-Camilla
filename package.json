@@ -2,7 +2,7 @@
   "name": "front-temperature",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/JulianC13/Front-Camilla/camilla",
+  "homepage": "https://github.com/JulianC13/Front-Camilla/",
   "type": "module",
   "scripts": {
     "predeploy" : "npm run build",
