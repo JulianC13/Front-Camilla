@@ -1,3 +1,4 @@
+// Componet that will render the bottom of the web page
 function Footer(){
     return (
       <footer className="footer">

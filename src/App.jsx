@@ -1,20 +1,24 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState, useEffect, useDebugValue }  from 'react';
 import './App.css'
 import Card from './components/Card';
 import HeadC from './components/HeadC';
 import Footer from './components/Footer';
 
 const App = () => {
+// Hooks that allow you to load the status of the request and the result.
 const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [dataT, setDataT] = useState([]);
+const [isLoaded, setIsLoaded] = useState(false);
+const [dataT, setDataT] = useState([]);
+
       useEffect(() => {
-        fetch("https://back-camilla2-0e129e1d58c8.herokuapp.com/search")
+        // For web deployment, this is the URL that was used.
+        // fetch("https://back-camilla2-0e129e1d58c8.herokuapp.com/search")
+        // For deployment in a local enviroment use local address:
+        fetch("http://127.0.0.1:8282/search")
             .then(res => res.json())
             .then(
                 (data) => {
                     setIsLoaded(true);
-                    // console.log(data)
                     setDataT(data);
                 },
                 (error) => {
@@ -24,7 +28,7 @@ const [error, setError] = useState(null);
             )
       }, [])
 
-
+// Handling the behavior of the request and rendering something to let the user know what's happening.
 if (error) {
         return <div><h2>Error while fetching the data, please try later</h2></div>;
     } else if (!isLoaded) {

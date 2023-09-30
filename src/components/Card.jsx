@@ -1,8 +1,7 @@
 import Sun from '../assets/giphy.gif'
 import Rain from '../assets/Rain.gif'
-
+// Reusable component that will handle weather information for each record that comes in the fetched data.
 function Card(props){
-    console.log(props.data)
     let item = props.data
     return (
         <div className={parseFloat(item.Chanceofrainfall)<50?'widgetSun':'widgetRain'} key={item.Date}>
