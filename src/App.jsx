@@ -12,9 +12,9 @@ const [dataT, setDataT] = useState([]);
 
       useEffect(() => {
         // For web deployment, this is the URL that was used.
-        // fetch("https://back-camilla2-0e129e1d58c8.herokuapp.com/search")
+        fetch("https://back-camilla2-0e129e1d58c8.herokuapp.com/search")
         // For deployment in a local enviroment use local address:
-        fetch("http://127.0.0.1:8282/search")
+        // fetch("http://127.0.0.1:8282/search")
             .then(res => res.json())
             .then(
                 (data) => {
